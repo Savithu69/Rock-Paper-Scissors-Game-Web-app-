@@ -2,31 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Rock Paper Scissors</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-  <main class="rps-container">
+  <div class="rps-wrapper">
     <h1 class="rps-title">Rock Paper Scissors</h1>
-
-    <div class="rps-scoreboard">
-      <div>Player: <strong id="rps-player-score">0</strong></div>
-      <div>Computer: <strong id="rps-computer-score">0</strong></div>
+    
+    <h2 class="rps-subtitle">Select one of the options</h2>
+    
+    <div class="choice-buttons">
+      <button class="choice-btn" onclick="play('rock')">🪨 Rock</button>
+      <button class="choice-btn" onclick="play('paper')">📄 Paper</button>
+      <button class="choice-btn" onclick="play('scissors')">✂️ Scissors</button>
     </div>
 
-    <div class="rps-buttons">
-      <button class="rps-btn" onclick="play('rock')">🪨 Rock</button>
-      <button class="rps-btn" onclick="play('paper')">📄 Paper</button>
-      <button class="rps-btn" onclick="play('scissors')">✂️ Scissors</button>
+    <div class="scoreboard">
+      <div>Player Score: <span id="rps-player-score">0</span></div>
+      <div>Computer Score: <span id="rps-computer-score">0</span></div>
     </div>
 
-    <div id="rps-user-choice" class="rps-display"></div>
-    <div id="rps-computer-choice" class="rps-display"></div>
-    <div id="rps-result" class="rps-result"></div>
+    <div id="rps-user-choice" class="display-box"></div>
+    <div id="rps-computer-choice" class="display-box"></div>
+    <div id="rps-result" class="result-announcement"></div>
 
-    <button class="rps-reset-btn" onclick="resetGame()">Reset Score</button>
-  </main>
+    <button class="reset-btn" onclick="resetGame()">Reset</button>
+  </div>
 
   <script src="script.js"></script>
 </body>
