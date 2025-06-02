@@ -1,6 +1,7 @@
 const optns = ["rock", "paper", "scissors"];
 const emojis = { rock: "🪨", paper: "📄", scissors: "✂️" };
 let plyrScore = 0, comptrScore = 0;
+let clearDisplayTimer;
 
 function play(userCh) {
   const compt = optns[Math.floor(Math.random() * 3)];
@@ -21,6 +22,13 @@ function play(userCh) {
   document.getElementById("rps-result").textContent = result;
   document.getElementById("rps-player-score").textContent = plyrScore;
   document.getElementById("rps-computer-score").textContent = comptrScore;
+
+  clearTimeout(clearDisplayTimer);
+  clearDisplayTimer = setTimeout(() => {
+    document.getElementById("rps-user-choice").textContent = "";
+    document.getElementById("rps-computer-choice").textContent = "";
+    document.getElementById("rps-result").textContent = "";
+  }, 2000);
 }
 
 function resetGame() {
@@ -30,5 +38,5 @@ function resetGame() {
   });
   document.getElementById("rps-player-score").textContent = "0";
   document.getElementById("rps-computer-score").textContent = "0";
+  clearTimeout(clearDisplayTimer);
 }
-
